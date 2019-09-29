@@ -1,14 +1,20 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu type="overlay">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
+  <!-- <ion-split-pane disabled="true"> -->
+    <ion-menu type="overlay" (ionWillOpen)=test()>
       <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+        <ion-list *ngIf="switch">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of studentPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list *ngIf="!switch">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of teacherPages">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
@@ -20,5 +26,5 @@
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
-  </ion-split-pane>
+  <!-- </ion-split-pane> -->
 </ion-app>

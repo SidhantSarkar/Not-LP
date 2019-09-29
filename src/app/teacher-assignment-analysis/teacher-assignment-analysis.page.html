@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        {{id}} Analysis
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <div style="margin-top:30px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <ion-card style="width:80%;">
+          <ion-card-header>
+              <ion-card-title style="font-weight: 700; font-size: x-large">
+               {{id}}
+              </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-list>
+                    <ion-item *ngFor="let item of data">
+                      <ion-list lines=none>
+                          <ion-item style="display: block;">Name: &nbsp;<span style="font-weight: 700; font-size: large">{{item.student}}</span></ion-item>
+                          <ion-item style="display: block;">Marks: &nbsp;<span style="font-weight: 700; font-size: large">{{item.marks}}</span> &nbsp; /{{marks}}</ion-item>
+                      </ion-list>
+                    </ion-item>
+                </ion-list>
+                
+              </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Student
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+        <ion-card style="margin-top:20px; width: 50%;" *ngFor="let item of assignments" (click)="openAssignment(item.name, item.marks)">
+            <ion-card-header>
+                <ion-card-title style="font-weight: 700; font-size: x-large">
+                 {{item.name}}
+                </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item lines="none">
+                    <ion-text>Total Questions:  &nbsp;<span style="font-weight: 700; font-size: x-large">{{item.questions}}</span></ion-text>
+                  </ion-item>
+                  <ion-item lines="none">
+                    <ion-text>Total Marks:  &nbsp;<span style="font-weight: 700; font-size: x-large">{{item.marks}}</span></ion-text>
+                  </ion-item>
+                  <ion-item lines="none">
+                      Deadline: <ion-datetime style="font-size: x-large; font-weight: 700" displayFormat="DD/MM/YY, HH:mm" readonly="true" value="2019-09-30T23:59:69.789"></ion-datetime>
+                   </ion-item>
+                  <!-- <ion-item lines="none"> -->
+                  <!-- <ion-text>Deadline:  &nbsp;<span style="display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: x-large"></span></ion-text> -->
+                  <!-- </ion-item> -->
+                </ion-card-content>
+          
+        </ion-card>
+    </div>
+</ion-content>

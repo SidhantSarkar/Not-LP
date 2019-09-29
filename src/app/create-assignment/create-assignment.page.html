@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          New Assignment
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content style="display: flex; flex-direction:column; align-content: center;">
+  <form [formGroup]="questionForm">
+      <ion-card style="width: 80%; height: 20vh; margin-top: 30px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; justify-content: space-evenly">
+        <ion-item>
+          <ion-label position="floating">Assignment Name</ion-label>
+          <ion-input formControlName="assignmentName" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Max Marks</ion-label>
+          <ion-input formControlName="maxMarks" type="number"></ion-input>
+        </ion-item>
+      </ion-card>
+      
+      <div *ngFor="let temp of questionForm.controls.questions.controls; let c = index">
+          <ion-card [formGroup]="temp" style="margin-top: 20px; width: 80%; height: auto; margin-left: auto; margin-right: auto;">
+              <ion-item>
+                <ion-label position="floating">Question {{c+1}}</ion-label>
+                <ion-textarea formControlName="question" type="text"></ion-textarea>
+              </ion-item>
+      
+              <ion-item>
+                <ion-label position="floating">Model Answer</ion-label>
+                <ion-textarea autoGrow="true" formControlName="answer" type="text"></ion-textarea>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="floating">Marks</ion-label>
+                  <ion-input autoGrow="true" formControlName="marks" type="number"></ion-input>
+                </ion-item>
+
+            </ion-card>    
+      </div>
+         
+  </form>
+</ion-content>
+
+<ion-footer mode="ios">
+    <ion-toolbar mode="ios">
+      <ion-title>
+          <ion-button fill="clear" size="large" (click)="addQuestion()">
+              Add Question
+          </ion-button>
+          <ion-button fill="clear" size="large" (click)="submit()">
+              Submit
+          </ion-button>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

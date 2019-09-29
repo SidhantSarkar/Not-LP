@@ -1,7 +1,12 @@
+ion-item{
+    --highlight-color-valid: --ion-color-primary;
+}
+
 ion-content{
     --background: #efeeee73 !important;
 }
 
 ion-card{
     --background: white !important;
+    padding: 1%;
 }

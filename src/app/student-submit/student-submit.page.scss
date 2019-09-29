@@ -4,4 +4,9 @@ ion-content{
 
 ion-card{
     --background: white !important;
+    padding: 1%;
+}
+
+ion-item{
+    --highlight-color-valid: --ion-color-primary;
 }
