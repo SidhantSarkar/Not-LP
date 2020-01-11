@@ -33,3 +33,7 @@ An end to end solution to evaluate your subjective answer based on a sample answ
 5. Run `npm install` in the root directory.
 6. `ionic serve [--address=host_address]`
 
+#### Created By:
+1. Ayaan Kakkar
+2. Sidhant S Sarkar
+3. Samik Prakash
